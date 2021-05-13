@@ -56,7 +56,7 @@ router.put('/:id', async (req, res) => {
     })
 
     if(!tagData) {
-      res.status(404).json({message: 'No Category exists with given ID.'})
+      res.status(404).json({message: 'No Tag exists with given ID.'})
       return;
     }
 
@@ -76,11 +76,11 @@ router.delete('/:id', async (req, res) => {
     })
 
     if(!tagData) {
-      res.status(404).json({message: 'No Category exists with given ID.'})
+      res.status(404).json({message: 'No Tag exists with given ID.'})
       return;
     }
 
-    res.status(200).json(tagData);
+    res.status(200).end();
   }
   catch(err) {
     res.status(500).json(err);
